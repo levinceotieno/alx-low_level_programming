@@ -2,8 +2,8 @@
 #include <stdio.h>
 /**
  * main - printing without printf or puts
- * output to stdErr
- * return 1
+ * Description - output to std Error
+ * Return: 1 (Success)
 */
 int main(void)
 {
