@@ -7,7 +7,7 @@
 int main(void)
 {
 int nmb;
-for (nmb = 0; nmb <= 9; ++nmb)
+for (nmb = '0'; nmb <= '9'; ++nmb)
 putchar(nmb);
 putchar('\n');
 return (0);
