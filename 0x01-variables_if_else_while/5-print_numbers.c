@@ -8,6 +8,7 @@ int main(void)
 {
 int nmb;
 for (nmb = 0; nmb <= 9; ++nmb)
-printf("%d\n", nmb);
+printf("%d", nmb);
+printf("\n");
 return (0);
 }
