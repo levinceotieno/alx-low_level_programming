@@ -6,18 +6,15 @@
 */
 int main(void)
 {
-char letter = 'a';
-while (letter <= 'Z')
+char a;
+char A;
+for (a = 'a'; a <= 'z'; a++)
 {
-putchar(letter);
-if (letter == 'z')
-{
-letter = 'A';
+putchar(a);
 }
-else
+for (A = 'A'; A <= 'Z'; A++)
 {
-letter++;
-}
+putchar(A);
 }
 putchar('\n');
 return (0);
