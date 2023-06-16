@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main - main prints all possible different combinations of two two-digit numbers.
- * Description: prints all 00 01 and 01 00 are considered as the same combination of the numbers 0 and 1
+ * main - main prints all possible different combinations
+ * Description: prints all 00 01 and 01 00 are considered similar
  * Return: at 0 (Success)
 */
 int main(void)
