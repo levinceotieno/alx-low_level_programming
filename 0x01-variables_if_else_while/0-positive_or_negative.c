@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <time.h>
 #include <stdlib.h>
-/** 
- * main - working on negative or positive
- * Description - fetch for a random number and print it
+/**
+ * main - main block contains the entire working
+ * Description: fetching a random number and printing it
  * Return: 0 (Success)
 */
 int main(void)
@@ -20,9 +20,9 @@ else if (n < 0)
 {
 printf("%d is negative\n", n);
 }
-else 
+else
 {
-printf("%d is zero", n);
+printf("%d is zero\n", n);
 }
 return (0);
 }
