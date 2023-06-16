@@ -6,15 +6,19 @@
 */
 int main(void)
 {
-int i, j;
-for (i = 0; i < 10; ++i)
+int tens;
+int ones;
+for (tens = 0; tens <= 9; ++tens)
 {
-for (j = i + 1; j < 10; ++j)
+for (ones = tens + 1; ones <= 9; ++ones)
 {
-putchar(i + '0');
-putchar(j + '0');
-putchar(44);
-putchar(32);
+putchar(tens + '0');
+putchar(ones + '0');
+if (tens < 8)
+{
+putchar(',');
+putchar(' ');
+}
 }
 }
 putchar('\n');
