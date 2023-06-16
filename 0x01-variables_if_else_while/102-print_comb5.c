@@ -6,31 +6,36 @@
 */
 int main(void)
 {
-int i, j;
-int w, x, y, z;
-for (i = 0; i < 100; ++i)
+int a, i, b, c;
+for (a = 48; a <= 57; ++a)
 {
-w = i / 10;
-x = i % 10;
-for (j = 0; j < 100; ++j)
+for (i = 48; i <= 57; ++i)
 {
-y = j / 10;
-z = j % 10;
-if (w < y || (w == y && x < z))
+for (b = 48; b <= 57; ++b)
 {
-putchar(w + '0');
-putchar(x + '0');
-putchar(32);
-putchar(y + '0');
-putchar(z + '0');
-if (!(w == 9 && y == 8))
+for (c = 48; c <= 57; ++c)
 {
-putchar(44);
-putchar(32);
+if (((b + c) > (a + i) && b >= a) || a < b)
+{
+putchar(a);
+putchar(i);
+putchar(' ');
+putchar(b);
+putchar(c);
+if (a + i + b + c == 227 && a == 57)
+{
+break;
+}
+else
+{
+putchar(',');
+putchar(' ');
 }
 }
 }
 }
-putchar(10);
-return (0);    
+}
+}
+putchar('\n');
+return (0);
 }
