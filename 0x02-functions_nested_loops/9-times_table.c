@@ -2,35 +2,40 @@
 /**
  * times_table - prints 9 times table
  * Description: printing 9 times table starting with 0
- * Return: 0 (Success)
-*/
+ * Return: void
+ */
 void times_table(void)
 {
-int i, j, k;
-for (i = 0; i <= 10; i++)
+int a;
+int b;
+int product;
+for (a = 0; a <= 9; a++)
 {
-for (j = 0; j <= 10; j++)
+for (b = 0; b <= 9; b++)
 {
-k = i * j;
-if (j == 0)
+product = a * b;
+if (product <= 9)
 {
-_putchar(k + '0');
+{
+if (b > 0)
+{
+_putchar(' ');
 }
-if (k < 10 && j != 0)
+}
+_putchar(product + '0');
+}
+else
+{
+_putchar((product / 10) + '0');
+_putchar((product % 10) + '0');
+}
+if (b < 9)
 {
 _putchar(',');
 _putchar(' ');
-_putchar(' ');
-_putchar(k + '0');
-}
-else if (k >= 10)
-{
-_putchar(',');
-_putchar(' ');
-_putchar((k / 10) + '0');
-_putchar((k % 10) + '0');
 }
 }
 _putchar('\n');
 }
 }
+
