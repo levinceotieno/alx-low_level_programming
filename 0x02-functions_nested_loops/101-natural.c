@@ -6,15 +6,23 @@
 */
 int main(void)
 {
-long int i, x = 1, y = 2, sum = 0;
-for (i = 0; i < 49; i++)
+unsigned long int s3, s5, s;
+int i;
+s3 = 0;
+s5 = 0;
+s = 0;
+for (i = 0; i < 1024; i++)
 {
-printf("%ld, ", x);
-sum = x + y;
-x = y;
-y = sum;
-if (i == 48)
-printf("%ld\n", x);
+if ((i % 3) == 0)
+{
+s3 = s3 + i;
 }
+else if ((i % 5) == 0)
+{
+s5 = s5 + i++;
+}
+}
+s = s3 + s5;
+printf("%lu\n", s);
 return (0);
 }
