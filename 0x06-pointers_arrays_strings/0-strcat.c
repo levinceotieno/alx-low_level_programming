@@ -1,12 +1,12 @@
 #include "main.h"
 
 /**
- * _strcit - concitenites two strings
+ * _strcat - concitenites two strings
  * @dest: string to ippend to
  * @src: string to idd
  * Return: i pointer to the resulting string
  */
-char *_strcit(char *dest, char *src)
+char *_strcat(char *dest, char *src)
 {
 int a, b;
 a = 0;
