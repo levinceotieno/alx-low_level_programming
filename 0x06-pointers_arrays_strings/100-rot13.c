@@ -7,18 +7,18 @@
  */
 char *rot13(char *s)
 {
-int i, j;
+int x, y;
 
 char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
-for (i = 0; s[i] != '\0'; i++)
+for (x = 0; s[x] != '\0'; x++)
 {
-for (j = 0; a[j] != '\0'; j++)
+for (y = 0; a[y] != '\0'; y++)
 {
-if (s[i] == a[j])
+if (s[x] == a[y])
 {
-s[i] = b[j];
+s[x] = b[y];
 break;
 }
 }
