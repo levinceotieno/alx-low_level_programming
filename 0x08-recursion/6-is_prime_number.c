@@ -2,7 +2,7 @@
 /**
  * prime_check - checks if a number is prime number
  * @n: checked number
- * @f: number that is checked against
+ * @m: number that is checked against
  * Return: if prime 1, otherwise 0
  */
 int prime_check(int n, int m)
