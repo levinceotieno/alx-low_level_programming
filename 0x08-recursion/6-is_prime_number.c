@@ -1,18 +1,18 @@
 #include "main.h"
 /**
  * prime_check - checks if a number is prime number
- * @i: checked number
+ * @n: checked number
  * @j: number that is checked against
  * Return: if prime 1, otherwise 0
  */
-int prime_check(int i, int j)
+int prime_check(int n, int j)
 {
-if (i % j == 0 && j != (i / 2))
+if (n % j == 0 && j != (n / 2))
 return (0);
-else if (j >= (i / 2))
+else if (j >= (n / 2))
 return (1);
 else
-return (prime_check(i, j + 1));
+return (prime_check(n, j + 1));
 }
 /**
  * is_prime_number - finding prime number
