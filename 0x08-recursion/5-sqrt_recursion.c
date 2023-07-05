@@ -1,19 +1,19 @@
 #include "main.h"
 /**
  * sqrt_check - finding sqr root
- * @n: the number whose sqr root is searched
- * @m: number checked if it's sqr root of n
+ * @i: the number whose sqr root is searched
+ * @j: number checked if it's sqr root of n
  * Return: value of square root
  */
-int sqrt_check(int n, int m)
+int sqrt_check(int i, int j)
 {
-if (m * m == n)
+if (j * j == i)
 {
-return (m);
+return (j);
 }
-else if (m >= n / 2)
+else if (j >= i / 2)
 return (-1);
-return (sqrt_check(n, m + 1));
+return (sqrt_check(i, j + 1));
 }
 /**
  * _sqrt_recursion - finding sqr root of given number
