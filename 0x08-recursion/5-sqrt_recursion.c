@@ -2,18 +2,18 @@
 /**
  * sqrt_check - finding sqr root
  * @n: the number whose sqr root is searched
- * @c: number checked if it's sqr root of n
+ * @j: number checked if it's sqr root of n
  * Return: value of square root
  */
-int sqrt_check(int n, int c)
+int sqrt_check(int n, int j)
 {
-if (c * c == n)
+if (j * j == n)
 {
-return (c);
+return (j);
 }
-else if (c >= n / 2)
+else if (j >= n / 2)
 return (-1);
-return (sqrt_check(n, c + 1));
+return (sqrt_check(n, j + 1));
 }
 /**
  * _sqrt_recursion - finding sqr root of given number
@@ -30,3 +30,4 @@ else if (n == 0)
 return (0);
 return (sqrt_check(n, 1));
 }
+

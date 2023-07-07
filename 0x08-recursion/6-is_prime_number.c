@@ -2,17 +2,17 @@
 /**
  * prime_check - checks if a number is prime number
  * @n: checked number
- * @f: number that is checked against
+ * @j: number that is checked against
  * Return: if prime 1, otherwise 0
  */
-int prime_check(int n, int f)
+int prime_check(int n, int j)
 {
-if (n % f == 0 && f != (n / 2))
+if (n % j == 0 && j != (n / 2))
 return (0);
-else if (f >= (n / 2))
+else if (j >= (n / 2))
 return (1);
 else
-return (prime_check(n, f + 1));
+return (prime_check(n, j + 1));
 }
 /**
  * is_prime_number - finding prime number
@@ -28,3 +28,4 @@ else if (n < 0)
 return (0);
 return (0);
 }
+
