@@ -1,7 +1,8 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * _putchar - creates an array of chars, init with specific char
+ * create_array - creates an array of chars, init with specific char
+ * _putchar - prints the array
  * @size: size
  * @c: assigned char
  * Return: pointer to array, if failed NULL
