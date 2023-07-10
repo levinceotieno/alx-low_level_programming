@@ -1,24 +1,30 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 #include <stdio.h>
+
 /**
- * _strdup - returns a pointer to a newly allocated space in memory
- * @str: char
- * Return: Always 0
+ * _strdup - pointer to the newly allocated space in the memory
+ * @str: Character
+ * Return: 0 (Success)
 */
+
 char *_strdup(char *str)
 {
-char *p;
-int a, b = 0;
+
+char *v;
+int z, y = 0;
+
 if (str == NULL)
 return (NULL);
-a = 0;
-while (str[a] != '\0')
-a++;
-p = malloc(sizeof(char) * (a + 1));
-if (p == NULL)
+
+z = 0;
+while (str[z] != '\0')
+z++;
+v = malloc(sizeof(char) * (z + 1));
+if (v == NULL)
 return (NULL);
-for (b = 0; str[b]; b++)
-p[b] = str[b];
-return (p);
+
+for (y = 0; str[y]; y++)
+v[y] = str[y];
+return (v);
 }

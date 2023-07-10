@@ -1,38 +1,45 @@
 #include "main.h"
 #include <stdlib.h>
+
 /**
- * str_concat - concatenates two strings
- * @s1: input1
- * @s2: input2
- * Return: s1 + s2
+ * str_concat - concatenating 2 strings
+ * @s1: first input
+ * @s2: second input
+ * Return: string s2 concat with string s1
  */
+
 char *str_concat(char *s1, char *s2)
 {
-char *add;
-int a, b;
+char *summation;
+int m, n;
+
 if (s1 == NULL)
 s1 = "";
 if (s2 == NULL)
 s2 = "";
-a = b = 0;
-while (s1[a] != '\0')
-a++;
-while (s2[b] != '\0')
-b++;
-add = malloc(sizeof(char) * (a + b + 1));
-if (add == NULL)
+m = n = 0;
+while (s1[m] != '\0')
+m++;
+while (s2[n] != '\0')
+n++;
+
+summation = malloc(sizeof(char) * (m + n + 1));
+if (summation == NULL)
 return (NULL);
-a = b = 0;
-while (s1[a] != '\0')
+
+m = n = 0;
+while (s1[m] != '\0')
 {
-add[a] = s1[a];
-a++;
+summation[m] = s1[m];
+m++;
 }
-while (s2[b] != '\0')
+
+while (s2[n] != '\0')
 {
-add[a] = s2[b];
-a++, b++;
+summation[m] = s2[n];
+m++, n++;
 }
-add[a] = '\0';
-return (add);
+
+summation[m] = '\0';
+return (summation);
 }
