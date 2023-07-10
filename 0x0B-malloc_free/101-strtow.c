@@ -1,71 +1,85 @@
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
+
 /**
- * count_word - splits a string into words
- * @s: the string
+ * count_word - it is spliting a string into words...
+ * @s: this is the Stringg
+ * 
  * Return: NULL if str == NULL or str == ""
  */
 int count_word(char *s)
 {
-int stand = 0, a = 0, b;
 
-for (b = 0; s[b] != '\0'; b++)
+int int_signn = 0;
+int z = 0;
+int y;
+
+for (y = 0; s[y] != '\0'; y++)
 {
-if (s[b] == ' ')
-stand = 0;
-else if (stand == 0)
+
+if (s[y] == ' ')
+int_signn = 0;
+
+else if (int_signn == 0)
 {
-stand = 1;
-a++;
+int_signn = 1;
+z++;
 }
-}
-return (a);
 }
 
+return (z);
+}
 /**
- * **strtow - splits a string into words
- * @str: string to split
- * Return: pointer to an array of strings (Success)
- * or NULL (Error)
+ * **strtow - it Splits a string down to words...
+ * @str: String to be splitted
+ * 
+ * Return: pointer to an array of strings or NULL (Error)
  */
+
 char **strtow(char *str)
 {
-char **mtrxx, *theme;
-int g, h = 0, lngth = 0, wds, x = 0, beegin, the_end;
+char **mmaattrriixx_, *shows_tmp;
+int k;
+int j = 0;
+int string_length = 0;
+int f = 0; 
+int the_words, Begginn, _ending;
 
-while (*(str + lngth))
-lngth++;
-wds = count_word(str);
-if (wds == 0)
+while (*(str + string_length))
+string_length++;
+the_words = count_word(str);
+
+if (the_words == 0)
 return (NULL);
 
-mtrxx = (char **) malloc(sizeof(char *) * (wds + 1));
-if (mtrxx == NULL)
+mmaattrriixx_ = (char **) malloc(sizeof(char *) * (the_words + 1));
+if (mmaattrriixx_ == NULL)
 return (NULL);
 
-for (g = 0; g <= lngth; g++)
+for (k = 0; k <= string_length; k++)
 {
-if (str[g] == ' ' || str[g] == '\0')
+if (str[k] == ' ' || str[k] == '\0')
 {
-if (x)
+if (f)
 {
-the_end = g;
-theme = (char *) malloc(sizeof(char) * (x + 1));
-if (theme == NULL)
+_ending = k;
+shows_tmp = (char *) malloc(sizeof(char) * (f + 1));
+if (shows_tmp == NULL)
 return (NULL);
 
-while (beegin < the_end)
-*theme++ = str[beegin++];
-*theme = '\0';
-mtrxx[h] = theme - x;
-h++;
-x = 0;
+while (Begginn < _ending)
+*shows_tmp++ = str[Begginn++];
+*shows_tmp = '\0';
+mmaattrriixx_[j] = shows_tmp - f;
+j++;
+f = 0;
 }
-}
-else if (x++ == 0)
-beegin = g;
 }
 
-mtrxx[h] = NULL;
-return (mtrxx);
+else if (f++ == 0)
+Begginn = k;
+}
+
+mmaattrriixx_[j] = NULL;
+return (mmaattrriixx_);
 }

@@ -1,37 +1,47 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
+
 /**
- * argstostr - concatenates all the arguments of the program
- * @ac: the input integer
- * @av: array pointer of double type
- * Return: Always 0
+ * argstostr - its Concatenating all the arguments of the program...
+ * @ac: Integer Input
+ * @av: double type array pointerrr
+ *
+ * Return: 0 (Success)
  */
+
 char *argstostr(int ac, char **av)
 {
-int a, b, m = 0, n = 0;
-char *str;
+
+int z, y, x = 0, w = 0;
+char *char_string;
+
 if (ac == 0 || av == NULL)
 return (NULL);
-for (a = 0; a < ac; a++)
+
+for (z = 0; z < ac; z++)
 {
-for (b = 0; av[a][b]; b++)
-n++;
+for (y = 0; av[z][y]; y++)
+w++;
 }
-n += ac;
-str = malloc(sizeof(char) * n + 1);
-if (str == NULL)
+
+w += ac;
+char_string = malloc(sizeof(char) * w + 1);
+if (char_string == NULL)
 return (NULL);
-for (a = 0; a < ac; a++)
+
+for (z = 0; z < ac; z++)
 {
-for (b = 0; av[a][b]; b++)
+for (y = 0; av[z][y]; y++)
 {
-str[m] = av[a][b];
-m++;
+char_string[x] = av[z][y];
+x++;
 }
-if (str[m] == '\0')
+
+if (char_string[x] == '\0')
 {
-str[m++] = '\n';
+char_string[x++] = '\n';
 }
 }
-return (str);
+
+return (char_string);
 }

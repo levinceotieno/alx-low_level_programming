@@ -1,37 +1,41 @@
-#include "main.h"
 #include <stdlib.h>
+#include "main.h"
+
 /**
- * alloc_grid - returns a pointer to a 2 dimensional array of integers
- * @width: the wdth
- * @height: the hght
- * Return: a pointer to 2 dimension array
+ * alloc_grid - Pointer to a 2 dimen... array of the int types
+ * @width: dim... the WIDthh
+ * @height: dim... HEIghtt
+ * Return: 2 dimn.. POINTER
  */
+
 int **alloc_grid(int width, int height)
 {
-int **p;
-int a, b;
+int z, y;
+int **pnter;
+
 if (width <= 0 || height <= 0)
 return (NULL);
 
-p = malloc(sizeof(int *) * height);
-if (p == NULL)
+pnter = malloc(sizeof(int *) * height);
+if (pnter == NULL)
 return (NULL);
 
-for (a = 0; a < height; a++)
+for (z = 0; z < height; z++)
 {
-p[a] = malloc(sizeof(int) * width);
-if (p[a] == NULL)
+pnter[z] = malloc(sizeof(int) * width);
+if (pnter[z] == NULL)
 {
-for (; a >= 0; a--)
-free(p[a]);
-free(p);
+for (; z >= 0; z--)
+free(pnter[z]);
+free(pnter);
 return (NULL);
 }
 }
-for (a = 0; a < height; a++)
+
+for (z = 0; z < height; z++)
 {
-for (b = 0; b < width; b++)
-p[a][b] = 0;
+for (y = 0; y < width; y++)
+pnter[z][y] = 0;
 }
-return (p);
+return (pnter);
 }

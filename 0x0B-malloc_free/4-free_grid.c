@@ -1,18 +1,21 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
+
 /**
- * free_grid - frees a 2 dimensional grid previously created by alloc_grid
- * @grid: second grid
- * @height: the hgt of grid
- * Return: nothing
+ * free_grid - freing 2 dimn... grid previously created by alloc_grid
+ * @grid: the 2nd.. grid
+ * @height: HEIIghht of the grid
+ *
+ * Return: void
  */
+
 void free_grid(int **grid, int height)
 {
-int a;
-for (a = 0; a < height; a++)
+int x;
+for (x = 0; x < height; x++)
 {
-free(grid[a]);
+free(grid[x]);
 }
 free(grid);
 }
