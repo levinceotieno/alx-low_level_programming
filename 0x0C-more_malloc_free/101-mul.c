@@ -1,113 +1,91 @@
-#include "main.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
-
+#include "main.h"
+#define ERR_MSG "Error"
+#include <stdio.h>
 /**
- * _is_zero - entry...looks for 0
- * @argv: vecto,,,
- * Return: (void)
+ * is_digit - whether a string includes a character that is not a digit
+ * @s: STR
+ * Return: 0 if a non-digit character is detected, 1 otherwise
  */
-
-void _is_zero(char *argv[])
+int is_digit(char *s)
 {
-int k, m = 1, n = 1;
-for (k = 0; argv[1][k]; k++)
-if (argv[1][k] != '0')
+int z = 0;
+while (s[z])
 {
-m = 0;
-break;
+if (s[z] < '0' || s[z] > '9')
+return (0);
+z++;
 }
-for (k = 0; argv[2][k]; k++)
-if (argv[2][k] != '0')
-{
-n = 0;
-break;
-}
-if (m == 1 || n == 1)
-{
-printf("0\n");
-exit(0);
-}
+return (1);
 }
 /**
- * _initialize_array - it is setting the new memory = 0
- *
- * @lar: LENGTH..
- * @ar: ARRAY
- * Return: POINTER (Success)
+ * _strlen - returns len
+ * @s: str
+ * Return: length
  */
-char *_initialize_array(char *ar, int lar)
+int _strlen(char *s)
 {
-int v = 0;
-for (v = 0; v < lar; v++)
-ar[v] = '0';
-ar[lar] = '\0';
-return (ar);
+int a = 0;
+while (s[a] != '\0')
+{
+a++;
+}
+return (a);
 }
 /**
- * _checknum - LENGTH & base 10 of number
- * @argv: vecto,,,
- * @n: ARRAY NUMBER
- * Return: LENGTH
+ * errors - detect error
  */
-int _checknum(char *argv[], int n)
-{
-int lennn;
-for (lennn = 0; argv[n][lennn]; lennn++)
-if (!isdigit(argv[n][lennn]))
+void errors(void)
 {
 printf("Error\n");
 exit(98);
 }
-return (lennn);
-}
 /**
- * main - 2 +ve numbss being multiplied
- * @argc: number of counts
- * @argv: vecto,,,
- * Return: 0 (Success)
+ * main - multiplies 2 +ve num..
+ * @argc: count
+ * @argv: vecto,,
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
-int r1, r2, s, plus, LH, y1, y22, y333, randmm;
-char *str;
+int lgth1, lgth2, lgth, j, kat, dgt_i, dgt_j, *outcome, f = 0;
+char *str1, *str2;
 
-if (argc != 3)
-printf("Error\n"), exit(98);
-r1 = _checknum(argv, 1), r2 = _checknum(argv, 2);
-_is_zero(argv), s = r1 + r2, str = malloc(s + 1);
-if (str == NULL)
-printf("Error\n"), exit(98);
-str = _initialize_array(str, s);
-y333 = s - 1, y1 = r1 - 1, y22 = r2 - 1, randmm = LH = 0;
-for (; y333 >= 0; y333--, y1--)
+str1 = argv[1], str2 = argv[2];
+if (argc != 3 || !is_digit(str1) || !is_digit(str2))
+errors();
+lgth1 = _strlen(str1);
+lgth2 = _strlen(str2);
+lgth = lgth1 + lgth2 + 1;
+outcome = malloc(sizeof(int) * lgth);
+if (!outcome)
+return (1);
+for (j = 0; j <= lgth1 + lgth2; j++)
+outcome[j] = 0;
+for (lgth1 = lgth1 - 1; lgth1 >= 0; lgth1--)
 {
-if (y1 < 0)
+dgt_i = str1[lgth1] - '0';
+kat = 0;
+for (lgth2 = _strlen(str2) - 1; lgth2 >= 0; lgth2--)
 {
-if (LH > 0)
+dgt_j = str2[lgth2] - '0';
+kat += outcome[lgth1 + lgth2 + 1] + (dgt_i *dgt_j);
+outcome[lgth1 + lgth2 + 1] = kat % 10;
+kat /= 10;
+}
+if (kat > 0)
+outcome[lgth1 + lgth2 + 1] += kat;
+}
+for (j = 0; j < lgth - 1; j++)
 {
-plus = (str[y333] - '0') + LH;
-if (plus > 9)
-str[y333 - 1] = (plus / 10) + '0';
-str[y333] = (plus % 10) + '0';
+if (outcome[j])
+f = 1;
+if (f)
+_putchar(outcome[j] + '0');
 }
-y1 = r1 - 1, y22--, LH = 0, randmm++, y333 = s - (1 + randmm);
-}
-if (y22 < 0)
-{
-if (str[0] != '0')
-break;
-s--;
-free(str), str = malloc(s + 1), str = _initialize_array(str, s);
-y333 = s - 1, y1 = r1 - 1, y22 = r2 - 1, randmm = LH = 0;
-}
-if (y22 >= 0)
-{
-plus = ((argv[1][y1] - '0') * (argv[2][y22] - '0')) + (str[y333] - '0') + LH;
-LH = plus / 10, str[y333] = (plus % 10) + '0';
-}
-}
-printf("%s\n", str);
+if (!f)
+_putchar('0');
+_putchar('\n');
+free(outcome);
 return (0);
 }
