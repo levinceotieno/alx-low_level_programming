@@ -1,81 +1,74 @@
 #include <stdlib.h>
 #include "dog.h"
 /**
- * _strlen - THEfunct. returns the lngth
- * @s: STR *
- * Return: (lngth)
+ * _copy - copying the PASSED arg
+ * @src: details to be copied
+ * Return: PTR
  */
-int _strlen(char *s)
+char *_copy(char *src)
+{
+int a, lngth;
+char *pointer;
+if (src == NULL)
 {
 
-int a;
-a = 0;
-while (s[a] != '\0')
-{
-a++;
+return (NULL);
 }
-return (a);
-}
-/**
- * *_strcpy - COPING THE str pointed plus the NULL byte (\0)
- * @dest: POinter to buffer that str is being copied
- * @src: str
- * Return: pointer
- */
-char *_strcpy(char *dest, char *src)
-{
-int lngth;
-int a;
+for (lngth = 0; src[lngth] != '\0'; lngth++)
+;
+pointer = malloc(sizeof(char) * (lngth + 1));
 
-lngth = 0;
-while (src[lngth] != '\0')
+if (pointer == NULL)
 {
-lngth++;
+return (NULL);
 }
-for (a = 0; a < lngth; a++)
+for (a = 0; src[a] != '\0'; a++)
 {
-dest[a] = src[a];
+pointer[a] = src[a];
 }
-dest[a] = '\0';
-return (dest);
+pointer[a] = '\0';
+return (pointer);
 }
 /**
- * new_dog - creates a new dog
- * @name: dog's name
- * @age: dog's age
- * @owner: dog's owner
- * Return: Pointer to new dog, else NULL
+ * new_dog - Create a new dog variable
+ * @name: Dogs Nameee
+ * @age: dogs agee
+ * @owner: dogs owneer
+ * Return: PTR
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-int lngth_1;
-int lngth_2;
-dog_t *dog;
+char *_new_name, *_nieew_owner;
+dog_t *simba;
 
-lngth_1 = _strlen(name);
-lngth_2 = _strlen(owner);
-dog = malloc(sizeof(dog_t));
-
-if (dog == NULL)
-return (NULL);
-dog->name = malloc(sizeof(char) * (lngth_1 + 1));
-
-if (dog->name == NULL)
+if (name == NULL || owner == NULL)
 {
-free(dog);
 return (NULL);
 }
-dog->owner = malloc(sizeof(char) * (lngth_2 + 1));
-
-if (dog->owner == NULL)
+simba = malloc(sizeof(dog_t));
+if (simba == NULL)
 {
-free(dog);
-free(dog->name);
 
 return (NULL);
 }
-_strcpy(dog->name, name);
-_strcpy(dog->owner, owner);
-dog->age = age;
-return (dog);
+_new_name = _copy(name);
+if (_new_name == NULL)
+{
+free(simba);
+return (NULL);
+}
+(*simba).name = _new_name;
+
+(*simba).age = age;
+
+_nieew_owner = _copy(owner);
+if (_nieew_owner == NULL)
+{
+free((*simba).name);
+free(simba);
+return (NULL);
+}
+(*simba).owner = _nieew_owner;
+
+return (simba);
 }

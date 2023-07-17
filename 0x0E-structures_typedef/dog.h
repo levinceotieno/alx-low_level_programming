@@ -2,11 +2,11 @@
 #define DOG_H
 
 /**
- * struct dog - the dog credentials
- * @name: the Name _MEMBER
- * @age: the Age _MEMBER
- * @owner: its Owner _MEMBER
- * Description: Details are for dog (struct)
+ * struct dog - Struct dog
+ * @name: name
+ * @age: age
+ * @owner:  owner
+ * Description: This struct is for dog
  */
 
 struct dog
@@ -16,9 +16,10 @@ float age;
 char *owner;
 };
 
+typedef struct dog dog_t;
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
-char *_strcpy(char *dest, char *src);
-int _strlen(char *s);
+dog_t *new_dog(char *name, float age, char *owner);
+void free_dog(dog_t *d);
 
-#endif  /*DOG_H*/
+#endif /*DOG_H*/
