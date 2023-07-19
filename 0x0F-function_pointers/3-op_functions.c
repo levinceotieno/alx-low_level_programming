@@ -1,50 +1,55 @@
 #include "3-calc.h"
 /**
- * op_add - adds ints
- * @a: 1st arg
- * @b: 2nd arg
- * Return: sum of the 2 args
+ * op_add - addition of INTEGER
+ * @a: arguement1
+ * @b: arguement2
+ * Return: summation
  */
+
 int op_add(int a, int b)
 {
 return (a + b);
-}  
-/** 
- * op_sub - minus ints 
- * @a: 1st arg
- * @b: 2nd arg
- * Return: diff of the 2 args
+}
+/**
+ * op_sub - subb INTEGER
+ * @a: arguement1
+ * @b: arguement2
+ * Return: the diff
  */
 int op_sub(int a, int b)
 {
 return (a - b);
 }
-/** 
- * op_mul - multiply ints
- * @a: 1st arg
- * @b: 2nd arg
- * Return: prdct of 2 args
+/**
+ * op_mul - multi.. INTEGER
+ * @a: arguement1
+ * @b: arguement2
+ * Return: product
  */
+
 int op_mul(int a, int b)
 {
 return (a * b);
 }
-/** 
- * op_div - divides ints
- * @a: 1st arg
- * @b: 2nd arg
- * Return: division of 2 args
+
+/**
+ * op_div - div INTEGER
+ * @a: arguement1
+ * @b: arguement2
+ * Return: div
  */
+
 int op_div(int a, int b)
 {
 return (a / b);
-}  
-/** 
- * op_mod - module of ints
- * @a: 1st arg
- * @b: 2nd arg
- * Return: remainder
+}
+/**
+ * op_mod - mod of INTEGER
+ * @a: arguement1
+ * @b: arguement2
+ * Return: rem...
  */
+
 int op_mod(int a, int b)
 {
 return (a % b);

@@ -1,22 +1,26 @@
 #include "function_pointers.h"
+
 /**
- * int_index - seeks forr int
+ * int_index - searches integer
  * @array: The array
- * PTR being compared
- * Return: Index of 1st  element
- * return 0 or -1 if no match / size = -ve
+ * @size: the size
+ * @cmp: comparing
+ * Return: 1st elem index
+ *
+ * return 0 or neg
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-int x;
+int h;
+
 if (array && cmp)
 {
-for (x = 0; x < size; x++)
-{ 
-if (cmp(array[x]) != 0)
-return (x);
+for (h = 0; h < size; h++)
+{
+if (cmp(array[h]) != 0)
+return (h);
 }
-}
-return (-1);
 }
 
+return (-1);
+}

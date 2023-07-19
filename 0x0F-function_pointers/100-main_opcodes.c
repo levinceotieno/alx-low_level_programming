@@ -1,37 +1,42 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - entry point
- * @argc: arg count
- * @argv: arg vecctoo
- * Return: 0 (Success)
+ * main - main function
+ * @argc: COUNTS OF ARGUE
+ * @argv: VECTOR
+ *
+ * Return: 0
  */
+
 int main(int argc, char *argv[])
 {
-int s;
-int x;
-char *a;
+char *str;
+int y, x;
+
 if (argc != 2)
 {
 printf("Error\n");
 exit(1);
 }
-s = atoi(argv[1]);
-if (s < 0)
+
+y = atoi(argv[1]);
+if (y < 0)
 {
 printf("Error\n");
 exit(2);
 }
-a = (char *)main;
-for (x = 0; x < s; x++)
+
+str = (char *)main;
+for (x = 0; x < y; x++)
 {
-if (x  == s - 1)
+if (x  == y - 1)
 {
-printf("%02hhx\n", a[x]);
+printf("%02hhx\n", str[x]);
 break;
 }
-printf("%02hhx ", a[x]);
+printf("%02hhx ", str[x]);
 }
-return (0); 
+
+return (0);
 }
 
