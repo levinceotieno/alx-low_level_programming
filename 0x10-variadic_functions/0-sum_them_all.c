@@ -1,17 +1,21 @@
 #include "variadic_functions.h"
+
 /**
- * sum_them_all - summation
- * @n: NUM.arg
- * Return: sum
+ * sum_them_all - addition
+ * @n: namba of argments
+ * @...: arg that helps calc the sum
+ *
+ * Return: the resulting addition
  */
+
 int sum_them_all(const unsigned int n, ...)
 {
-unsigned int x;
-int add = 0;
+unsigned int h;
+int plus = 0;
 va_list list;
 va_start(list, n);
-for (x = 0; x < n; x++)
-add += va_arg(list, int);
+for (h = 0; h < n; h++)
+plus += va_arg(list, int);
 va_end(list);
-return (add);
+return (plus);
 }

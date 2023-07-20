@@ -1,43 +1,50 @@
+#include <stdarg.h>
 #include "variadic_functions.h"
+#include <stdio.h>
 /**
- * print_all - Entry point
- * @format: the formart listing
+ * print_all - anything is printed
+ * @format: arg
  */
+
 void print_all(const char * const format, ...)
 {
-int x = 0;
-char *string, *paret = "";
-va_list list;
-va_start(list, format);
+int y = 0;
+char *str, *sep = "";
+va_list est;
+va_start(est, format);
+
 if (format)
 {
-while (format[x])
+while (format[y])
 {
-switch (format[x])
+switch (format[y])
 {
-case 'a':
-printf("%s%c", paret, va_arg(list, int));
-break;
-case 'b':
-printf("%s%d", paret, va_arg(list, int));
-break;
 case 'c':
-printf("%s%f", paret, va_arg(list, double));
+printf("%s%c", sep, va_arg(est, int));
 break;
-case 'd':
-string = va_arg(list, char *);
-if (!string)
-string = "(nil)";
-printf("%s%s", paret, string);
+
+case 'i':
+printf("%s%d", sep, va_arg(est, int));
+break;
+
+case 'f':
+printf("%s%f", sep, va_arg(est, double));
+break;
+
+case 's':
+str = va_arg(est, char *);
+if (!str)
+str = "(nil)";
+printf("%s%s", sep, str);
 break;
 default:
-x++;
+y++;
 continue;
 }
-paret = ", ";
-x++;
+sep = ", ";
+y++;
 }
 }
 printf("\n");
-va_end(list);
+va_end(est);
 }
