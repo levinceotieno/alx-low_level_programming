@@ -5,8 +5,7 @@
  * sum_them_all - addition
  * @n: namba of argments
  * @...: arg that helps calc the sum
- *
- * Return: the resulting addition
+ * Return: if n == 0 - 0 otherwise sum
  */
 
 int sum_them_all(const unsigned int n, ...)
