@@ -1,21 +1,18 @@
 section .data
-    hello db "Hello, Holberton", 0
 
 section .text
-    extern printf
-    global main
+    global _start
 
-main:
-    ; Set up the stack frame (optional in x86_64)
-    push rbp
-    mov rbp, rsp
+_start:
+    ; Call the C function that calls printf
+    call print_hello_c
 
-    ; Call printf with the address of the string 'hello'
-    lea rdi, [hello]
-    call printf
+    ; Exit the program
+    mov rax, 60         ; syscall number for exit
+    xor rdi, rdi        ; status code 0
+    syscall
 
-    ; Clean up the stack frame and return
-    mov rsp, rbp
-    pop rbp
-    ret
+section .bss
+    ; Define the print_hello_c function symbol so that nasm will not throw an error
+    print_hello_c resb 1
 
