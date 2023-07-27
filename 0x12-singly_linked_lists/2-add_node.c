@@ -13,15 +13,15 @@ list_t *add_node(list_t **head, const char *str)
 {
 list_t *size;
 
-unsigned int len = 0;
-while (str[len])
-len++;
+unsigned int lgtth = 0;
+while (str[lgtth])
+lgtth++;
 size = malloc(sizeof(list_t));
 if (!size)
 return (NULL);
 
 size->str = strdup(str);
-size->len = len;
+size->len = lgtth;
 size->next = (*head);
 (*head) = size;
 return (*head);
