@@ -1,11 +1,15 @@
 #include <stdio.h>
-void fst(void) __attribute__((constructor));
+
+void ffrrsstt(void) __attribute__((constructor));
+
 /**
- * fst - Sentence b4 Main
- * funct.. Xcution
+ * ffrrsstt - funct writes sent.. beforrr main functtt
+ *
+ * Description: fnctuon
  */
-void fst(void)
+void ffrrsstt(void)
 {
+/* written sentences */
 printf("You're beat! and yet, you must allow,\n");
 printf("I bore my house upon my back!\n");
 }

@@ -1,33 +1,39 @@
+#include <string.h>
 #include "lists.h"
 #include <stdlib.h>
-#include <string.h>
+
 /**
- * add_node_end - NEW NODE Added
- * @head: Doubl PTR
- * @str: The STR
- * Return: New Elem..
+ * add_node_end - funct checks adding nnode
+ *
+ * @head: dabo ppoiinterr
+ * @str: SRINNG
+ * Return: ADDED NNODEE
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-list_t *t;
-list_t *m = *head;
+list_t *size;
+list_t *j = *head;
+
 unsigned int len = 0;
+
 while (str[len])
-len++;
-t = malloc(sizeof(list_t));
-if (!t)
+len++;/* itterration */
+size = malloc(sizeof(list_t));
+if (!size)
 return (NULL);
-t->str = strdup(str);
-t->len = len;
-t->next = NULL;
+
+size->str = strdup(str);
+size->len = len;
+size->next = NULL;
 if (*head == NULL)
 {
-*head = t;
-return (t);
+*head = size;
+return (size);
 }
-while (m->next)
-m = m->next;
-m->next = t;
-return (t);
+
+while (j->next)
+j = j->next;
+j->next = size;
+return (size);
 }
 

@@ -1,25 +1,29 @@
 #include <stdlib.h>
-#include <string.h>
 #include "lists.h"
+#include <string.h>
 /**
- * add_node - adds a new node at the beginning of a linked list
- * @head: DOUBLE PTR 2 list_t list
- * @str: the t Str
- * Return: Address
+ * add_node - ADDING NNODE
+ *
+ * @head: DDOUUBLE pointrr
+ * @str: a sttrinng
+ * Return: ptr head
+ *
  */
 list_t *add_node(list_t **head, const char *str)
 {
-list_t *t;
+list_t *size;
+
 unsigned int len = 0;
 while (str[len])
 len++;
-t = malloc(sizeof(list_t));
-if (!t)
+size = malloc(sizeof(list_t));
+if (!size)
 return (NULL);
-t->str = strdup(str);
-t->len = len;
-t->next = (*head);
-(*head) = t;
+
+size->str = strdup(str);
+size->len = len;
+size->next = (*head);
+(*head) = size;
 return (*head);
 }
 

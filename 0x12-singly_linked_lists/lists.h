@@ -1,23 +1,27 @@
-#ifndef THE_LISTS_H
-#define THE_LISTS_H
+#ifndef MY_LISTSH__
+#define MY_LISTSH__
+
 #include <stddef.h>
 /**
- * struct listS_ - function shows Singly Linked List
- * @string: Str
- * @next: Pnting the nxt node
- * @len: the len of Str
- * Description - singly linked lists
+ * struct we_list - works on ssingly Llinked lList
+ *
+ * @str: the string
+ * @next: the nxt noode
+ * @len: lengthh
+ *
+ * Description - the funct
  */
-typedef struct listS_
+
+typedef struct we_list
 {
 char *str;
 unsigned int len;
-struct listS_ *next;
+struct we_list *next;
 } list_t;
-void free_list(list_t *head);
-size_t list_len(const list_t *h);
 size_t print_list(const list_t *h);
-list_t *add_node(list_t **head, const char *str);
+void free_list(list_t *head);
 list_t *add_node_end(list_t **head, const char *str);
+list_t *add_node(list_t **head, const char *str);
+size_t list_len(const list_t *h);
 #endif
 

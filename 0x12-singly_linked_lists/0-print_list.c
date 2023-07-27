@@ -1,22 +1,26 @@
-#include <stdio.h>
 #include "lists.h"
+#include <stdio.h>
+
+
 /**
- * print_list - funct printng entire elemt..
- * @h: points to the list_t
- * Return: namba
+ * print_list - whole Elemntss of the args
+ * @h: PTR
+ *
+ *
+ * Return: NUM size
  */
-size_t print_list(const list_t *h)
+size_t print_list(const list_t *h)/* entry point */
 {
-size_t t = 0;
+size_t size = 0;
 while (h)
 {
-if (!h->str)
+if (!h->str)/* condition */
 printf("[0] (nil)\n");
 else
 printf("[%u] %s\n", h->len, h->str);
 h = h->next;
-t++;
+size++;/* itteration */
 }
-return (t);
+return (size);
 }
 

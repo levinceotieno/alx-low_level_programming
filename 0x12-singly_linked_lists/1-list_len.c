@@ -1,18 +1,22 @@
-#include <stdlib.h>
 #include "lists.h"
+#include <stdlib.h>
+
 /**
- * list_len - Printing namba of elem..
+ * list_len - main funct prrrnts num size
  * @h: Ptr
- * Return: namba of elem..
+ * Return: NUM size
  */
+
 size_t list_len(const list_t *h)
 {
-size_t t = 0;
-while (h)
+size_t size = 0;
+
+while (h)/* condition */
 {
-t++;
+size++;/* itterration */
+
 h = h->next;
 }
-return (t);
+return (size);
 }
 

@@ -1,19 +1,24 @@
 #include "lists.h"
 #include <stdlib.h>
+
 /**
- * free_list - funct.. free linked list
- * @head: the list freed
- * Return: void
+ * free_list - single list free
+ *
+ * @head: lisst
+ *
+ * Return: nothing
  */
 void free_list(list_t *head)
 {
-list_t *m;
-while (head)
+list_t *j;
+
+while (head)/* condition check */
 {
-m = head->next;
+j = head->next;
 free(head->str);
-free(head);
-head = m;
+free(head);/* freeing mem */
+
+head = j;/* equating */
 }
 }
 
