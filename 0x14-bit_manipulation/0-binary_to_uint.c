@@ -1,3 +1,4 @@
+#include <stdlib.h>
 #include "main.h"
 /**
  * binary_to_uint - Convert binary num to unsigned int
@@ -8,7 +9,7 @@ unsigned int binary_to_uint(const char *b)
 {
 int count;
 unsigned int decimal = 0;
-if (!b)
+if (b == NULL)
 return (0);
 for (count = 0; b[count]; count++)
 {
